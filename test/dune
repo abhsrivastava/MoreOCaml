@@ -1,0 +1,3 @@
+(tests
+ (names Chapter1Test Chapter2Test)
+ (libraries MoreOCaml ounit2))
