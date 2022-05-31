@@ -12,3 +12,6 @@ let rec ltake n l = match n with
 let rec ldrop n l = match n with 
   | 0 -> l 
   | _ -> ldrop (n - 1) (ltl l)
+
+let rec lmap f (Cons (h, tf)) = Cons (f h, fun () -> lmap f (tf()))
+let rec lfilter f (Cons (h, tf)) = if f h then Cons (h, fun () -> lfilter f (tf ())) else lfilter f (tf ())
